@@ -56,8 +56,8 @@ namespace Utilities {
         public static float NormalizedFixedDeltaTime => Time.fixedDeltaTime * PhysicsFPS;
 
         public static float ClampAngle(float degrees, float min, float max) {
-            while (degrees < -360.0f) { value += 360.0f; }
-            while (degrees > +360.0f) { value -= 360.0f; }
+            while (degrees < -360.0f) { degrees += 360.0f; }
+            while (degrees > +360.0f) { degrees -= 360.0f; }
             return Mathf.Clamp(degrees, min, max);
         }
     }
